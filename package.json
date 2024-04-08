@@ -7,7 +7,7 @@
     "check": "biome check .",
     "check:apply": "biome check . --apply",
     "commit-check": "biome check .",
-    "prepare": "husky"
+    "prepare": "husky && panda codegen"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,json,cjs,mjs}": "biome check --apply"
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.6.4",
+    "@pandacss/dev": "0.37.2",
     "@types/node": "20.10.8",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
