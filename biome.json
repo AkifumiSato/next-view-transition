@@ -1,0 +1,37 @@
+{
+  "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "ignore": [
+      "node_modules",
+      ".next",
+      "dist",
+      "backend",
+      "playwright-report",
+      "styled-system"
+    ],
+    "ignoreUnknown": true
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "ignore": [
+      "node_modules",
+      ".next",
+      "dist",
+      "backend",
+      "playwright-report",
+      "styled-system"
+    ],
+    "indentWidth": 2,
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  }
+}
