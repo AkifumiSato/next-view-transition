@@ -1,11 +1,13 @@
-import { ArticleCard } from "~/components/article-card";
+import { PageTitle } from "~/components/page-title";
+import { PostCard } from "~/components/post-card";
+import { getAllPosts } from "~/lib/fetcher/posts";
 import { css } from "../../styled-system/css";
-import { PageTitle } from "../components/page-title";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPosts();
   return (
     <main>
-      <PageTitle>Top page</PageTitle>
+      <PageTitle>Post gallery</PageTitle>
       <div
         className={css({
           paddingTop: 5,
@@ -14,15 +16,19 @@ export default function Home() {
         <ul
           className={css({
             display: "flex",
+            flexWrap: "wrap",
             gap: 3,
           })}
         >
-          <li>
-            <ArticleCard title="Card title" description="Description of card" />
-          </li>
-          <li>
-            <ArticleCard title="Card title" description="Description of card" />
-          </li>
+          {posts.map((post) => (
+            <li key={post.title}>
+              <PostCard
+                href={`/posts/${post.id}`}
+                title={post.title}
+                imageSrc={post.imageSrc}
+              />
+            </li>
+          ))}
         </ul>
       </div>
     </main>

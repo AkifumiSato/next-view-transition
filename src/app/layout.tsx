@@ -1,5 +1,5 @@
+import { Header } from "~/components/header";
 import { css } from "../../styled-system/css";
-import { Header } from "../components/header";
 import "./globals.css";
 
 export default function RootLayout({

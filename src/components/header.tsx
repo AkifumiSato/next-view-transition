@@ -10,7 +10,7 @@ export function Header() {
         alignItems: "center",
         padding: 4,
         borderBottom: "1px solid",
-        backgroundColor: "gray.3",
+        borderColor: "gray.5",
       })}
     >
       <Link
@@ -18,10 +18,10 @@ export function Header() {
         className={css({
           fontSize: "xl",
           fontWeight: "bold",
-          color: "gray.11",
+          color: "gray.10",
         })}
       >
-        Next.js with View Transitions
+        Next.js with View Transitions Demo
       </Link>
     </header>
   );
