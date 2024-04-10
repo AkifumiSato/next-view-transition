@@ -13,7 +13,6 @@ export function useTransitionWithCompletion() {
   }>();
 
   useLayoutEffect(() => {
-    console.log({ isPending });
     if (!isPending && pendingPromise.current) {
       pendingPromise.current.resolve();
       pendingPromise.current = undefined;

@@ -3,21 +3,8 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
+import { documentTransition } from "~/app/_lib/document-transition";
 import { useTransitionWithCompletion } from "~/app/_lib/use-transition-with-completion";
-
-type TransitionCallback = (callback: () => Promise<void> | void) => void;
-
-declare global {
-  interface Document {
-    startViewTransition?: TransitionCallback;
-  }
-}
-
-const fallbackTransition: TransitionCallback = (callback) => callback();
-const transition: TransitionCallback =
-  typeof document !== "undefined"
-    ? document.startViewTransition.bind(document) ?? fallbackTransition
-    : fallbackTransition;
 
 export function AnimationLink({
   children,
@@ -33,7 +20,7 @@ export function AnimationLink({
   const onClick = useCallback<React.MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
       e.preventDefault();
-      transition(() =>
+      documentTransition(() =>
         startTransitionWithCompletion(() => {
           router.push(href);
         }),
