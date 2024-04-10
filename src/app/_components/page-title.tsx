@@ -1,4 +1,4 @@
-import { css } from "../../styled-system/css";
+import { css } from "../../../styled-system/css";
 
 export function PageTitle({ children }: { children: React.ReactNode }) {
   return (

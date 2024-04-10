@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { css } from "../../styled-system/css";
+import { AnimationLink } from "~/app/_components/animation-link";
+import { css } from "../../../styled-system/css";
 
 export function PostCard({
   href,
@@ -11,7 +11,7 @@ export function PostCard({
   imageSrc: string;
 }) {
   return (
-    <Link
+    <AnimationLink
       href={href}
       className={css({
         display: "flex",
@@ -62,6 +62,6 @@ export function PostCard({
       >
         {title}
       </h3>
-    </Link>
+    </AnimationLink>
   );
 }

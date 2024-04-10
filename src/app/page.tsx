@@ -1,7 +1,7 @@
-import { PageTitle } from "~/components/page-title";
-import { PostCard } from "~/components/post-card";
-import { getAllPosts } from "~/lib/fetcher/posts";
 import { css } from "../../styled-system/css";
+import { PageTitle } from "./_components/page-title";
+import { PostCard } from "./_components/post-card";
+import { getAllPosts } from "./_fetcher/posts";
 
 export default async function Home() {
   const posts = await getAllPosts();

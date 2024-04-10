@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PageTitle } from "~/components/page-title";
-import { getPostById } from "~/lib/fetcher/posts";
 import { css } from "../../../../styled-system/css";
+import { PageTitle } from "../../_components/page-title";
+import { getPostById } from "../../_fetcher/posts";
 
 export default async function Page({
   params: { id },
