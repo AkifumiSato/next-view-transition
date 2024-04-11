@@ -13,6 +13,7 @@ export function PostCard({
   return (
     <AnimationLink
       href={href}
+      viewTransitionNameClass="post-card-image"
       className={css({
         display: "flex",
         flexDirection: "column",

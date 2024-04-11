@@ -29,7 +29,13 @@ export default async function Page({
           justifyContent: "center",
         })}
       >
-        <img src={post.imageSrc} alt={post.title} width={900} height={450} />
+        <img
+          src={post.imageSrc}
+          alt={post.title}
+          width={900}
+          height={450}
+          className="post-card-image"
+        />
       </div>
     </div>
   );
