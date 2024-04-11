@@ -6,7 +6,8 @@
       ".next",
       "dist",
       "playwright-report",
-      "styled-system"
+      "styled-system",
+      "package.json"
     ],
     "ignoreUnknown": true
   },
@@ -21,7 +22,8 @@
       ".next",
       "dist",
       "playwright-report",
-      "styled-system"
+      "styled-system",
+      "package.json"
     ],
     "indentWidth": 2,
     "indentStyle": "space"
