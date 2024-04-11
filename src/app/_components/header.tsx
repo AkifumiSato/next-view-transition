@@ -1,7 +1,18 @@
-import Link from "next/link";
+"use client";
+
+import { usePathname } from "next/navigation";
+import { AnimationLink } from "~/app/_components/animation-link";
 import { css } from "../../../styled-system/css";
 
+const navigationTextStyle = css({
+  fontSize: "xl",
+  fontWeight: "bold",
+  color: "gray.1",
+});
+
 export function Header() {
+  const pathname = usePathname();
+
   return (
     <header
       className={css({
@@ -9,22 +20,22 @@ export function Header() {
         justifyContent: "space-between",
         alignItems: "center",
         padding: 4,
-        borderBottom: "1px solid",
-        borderColor: "gray.5",
+        backgroundColor: "accent.8",
         // @ts-ignore view-transition-name is valid props in browser
         "view-transition-name": "main-header",
       })}
     >
-      <Link
-        href="/"
-        className={css({
-          fontSize: "xl",
-          fontWeight: "bold",
-          color: "gray.10",
-        })}
-      >
-        Next.js with View Transitions Demo
-      </Link>
+      <div>
+        {pathname === "/" ? (
+          <span className={navigationTextStyle}>
+            Next.js with View Transitions Demo
+          </span>
+        ) : (
+          <AnimationLink href="/" className={navigationTextStyle}>
+            {"← "}Back to Top page
+          </AnimationLink>
+        )}
+      </div>
     </header>
   );
 }
