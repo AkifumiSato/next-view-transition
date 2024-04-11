@@ -31,10 +31,10 @@ export function Header() {
           <span
             className={cx(
               css({
-                // @ts-ignore view-transition-name is valid props in browser
-                "view-transition-name": "main-header-text",
+                display: "inline-flex",
               }),
               navigationTextStyle,
+              "main-header-text",
             )}
           >
             Next.js with View Transitions Demo
@@ -45,6 +45,7 @@ export function Header() {
               className={css({
                 display: "inline-flex",
                 width: "20px",
+                marginRight: "10px",
               })}
             >
               ←
@@ -52,10 +53,9 @@ export function Header() {
             <span
               className={cx(
                 css({
-                  paddingLeft: "10px",
-                  // @ts-ignore view-transition-name is valid props in browser
-                  "view-transition-name": "main-header-text-link",
+                  display: "inline-flex",
                 }),
+                "main-header-text",
               )}
             >
               Next.js with View Transitions Demo

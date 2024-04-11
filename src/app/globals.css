@@ -35,33 +35,8 @@
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
   }
 
-  @keyframes slide-from-right-text {
-    from {
-      transform: translateX(-30px);
-    }
-  }
-
-  @keyframes slide-from-left-text {
-    from {
-      transform: translateX(30px);
-    }
-  }
-
-  ::view-transition-old(main-header-text) {
-    animation: none;
-    opacity: 0;
-  }
-
-  ::view-transition-new(main-header-text) {
-    animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-left-text;
-  }
-
-  ::view-transition-old(main-header-text-link) {
-    animation: none;
-    opacity: 0;
-  }
-
-  ::view-transition-new(main-header-text-link) {
-    animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right-text;
+  .main-header-text {
+    view-transition-name: main-header-text;
+    contain: paint;
   }
 }
