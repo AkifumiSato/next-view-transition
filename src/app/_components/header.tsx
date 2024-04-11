@@ -11,6 +11,8 @@ export function Header() {
         padding: 4,
         borderBottom: "1px solid",
         borderColor: "gray.5",
+        // @ts-ignore view-transition-name is valid props in browser
+        "view-transition-name": "main-header",
       })}
     >
       <Link
