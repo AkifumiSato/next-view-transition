@@ -28,4 +28,8 @@
   .post-card-image {
     view-transition-name: post-card-image;
   }
+
+  ::view-transition-group(post-card-image) {
+    animation-duration: 300ms;
+  }
 }

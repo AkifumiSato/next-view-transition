@@ -6,11 +6,7 @@
     "start": "next start",
     "check": "biome check .",
     "check:apply": "biome check . --apply",
-    "commit-check": "biome check .",
     "prepare": "husky && panda codegen"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,css,json,cjs,mjs}": "biome check --apply"
   },
   "dependencies": {
     "@ark-ui/react": "2.2.3",
@@ -26,7 +22,6 @@
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
     "husky": "9.0.11",
-    "lint-staged": "15.2.2",
     "typescript": "5.3.3"
   }
 }
