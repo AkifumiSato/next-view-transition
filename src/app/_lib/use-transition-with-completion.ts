@@ -21,7 +21,6 @@ export function useTransitionWithCompletion() {
 
   useLayoutEffect(
     () => () => {
-      // todo: アニメーション専用にhooksを再設計する
       if (pendingPromise.current) {
         // unmountされてもanimationされるようresolve
         pendingPromise.current.resolve();
@@ -32,9 +31,8 @@ export function useTransitionWithCompletion() {
   );
 
   const startTransitionWithCompletion = (transition: TransitionFunction) => {
-    const promise = new Promise<void>((resolve, reject) => {
-      pendingPromise.current = { resolve, reject };
-    });
+    const { promise, resolve, reject } = Promise.withResolvers<void>();
+    pendingPromise.current = { resolve, reject };
     startTransition(transition);
     return promise;
   };
