@@ -1,3 +1,4 @@
+import { BackForwardTransition } from "~/app/_components/back-forward-transition";
 import { css } from "../../styled-system/css";
 import { Header } from "./_components/header";
 import "./globals.css";
@@ -27,6 +28,7 @@ export default function RootLayout({
             {children}
           </div>
         </div>
+        <BackForwardTransition />
       </body>
     </html>
   );
