@@ -1,19 +1,22 @@
 import { notFound } from "next/navigation";
-import { css } from "../../../../styled-system/css";
+import { css, cx } from "../../../../styled-system/css";
 import { PageTitle } from "../../_components/page-title";
 import { getPostById } from "../../_fetcher/posts";
 
 export default async function Page({
   params: { id },
+  searchParams,
 }: {
   params: {
     id: string;
   };
+  searchParams: Record<string, string>;
 }) {
   const post = await getPostById(id);
   if (!post) {
     return notFound();
   }
+  const clickedFromIndex = searchParams.clickedFromIndex;
   return (
     <div
       className={css({
@@ -34,7 +37,9 @@ export default async function Page({
           alt={post.title}
           width={900}
           height={450}
-          className="post-card-image"
+          className={cx(
+            clickedFromIndex && `post-card-image-${clickedFromIndex}`,
+          )}
         />
       </div>
     </div>

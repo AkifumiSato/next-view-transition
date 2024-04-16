@@ -20,12 +20,13 @@ export default async function Home() {
             gap: 3,
           })}
         >
-          {posts.map((post) => (
+          {posts.map((post, index) => (
             <li key={post.title}>
               <PostCard
-                href={`/posts/${post.id}`}
+                href={`/posts/${post.id}?clickedFromIndex=${index}`}
                 title={post.title}
                 imageSrc={post.imageSrc}
+                viewTransitionNameClass={`post-card-image-${index}`}
               />
             </li>
           ))}

@@ -21,11 +21,9 @@ export function AnimationLink({
   const router = useRouter();
   const [_isPending, startTransitionWithCompletion] =
     useTransitionWithCompletion();
-  const [inTransition, setInTransition] = useState(false);
   const onClick = useCallback<React.MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
       e.preventDefault();
-      setInTransition(true);
       documentTransition(() =>
         startTransitionWithCompletion(() => {
           router.push(href);
@@ -41,7 +39,7 @@ export function AnimationLink({
       href={href}
       onClick={onClick}
       // `view-transition-name`は画面内で一意である必要があるため、押下時付与
-      className={cx(className, inTransition && viewTransitionNameClass)}
+      className={cx(className, viewTransitionNameClass)}
     >
       {children}
     </Link>

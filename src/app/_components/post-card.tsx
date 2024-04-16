@@ -5,15 +5,17 @@ export function PostCard({
   href,
   title,
   imageSrc,
+  viewTransitionNameClass,
 }: {
   href: string;
   title: string;
   imageSrc: string;
+  viewTransitionNameClass?: string;
 }) {
   return (
     <AnimationLink
       href={href}
-      viewTransitionNameClass="post-card-image"
+      viewTransitionNameClass={viewTransitionNameClass}
       className={css({
         display: "flex",
         flexDirection: "column",
