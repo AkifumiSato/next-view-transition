@@ -16,15 +16,16 @@ export function Header() {
 
   return (
     <header
-      className={css({
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: 4,
-        backgroundColor: "accent.8",
-        // @ts-ignore view-transition-name is valid props in browser
-        "view-transition-name": "main-header",
-      })}
+      className={cx(
+        css({
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: 4,
+          backgroundColor: "accent.8",
+        }),
+        "main-header",
+      )}
     >
       <div>
         {pathname === "/" ? (
